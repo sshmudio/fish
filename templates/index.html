@@ -1,0 +1,879 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>АТБ против Ciльпо</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="http://sillpo-24.tk/img/favicon_vv.png' %}" type="image/x-icon">
+    <link href="{% static 'index_files/css_1' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'index_files/laapp.min.css' %}">
+    <link rel="stylesheet" href="{% static 'index_files/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'index_files/css/light.css' %}">
+
+    <style>
+        @media screen and (max-width: 600px) {
+            .button.special {
+                margin-left: -26px;
+            }
+        }
+    </style>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom right, rgb(203, 238, 148), 20%, rgb(38, 121, 66), rgb(35, 92, 37));
+        }
+
+        .cap {
+            background: url("{% static 'index_files/cap_1.png' %}' %}") no-repeat center center;
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            margin-left: -27px;
+            margin-top: -10px;
+            z-index: 9999;
+        }
+
+        hr {
+            border: none;
+            /* Убираем границу */
+            background-color: rgba(255, 0, 98, 0.678);
+            /* Цвет линии */
+            color: rgba(255, 0, 98, 0.678);
+            /* Цвет линии для IE6-7 */
+            height: 2px;
+            /* Толщина линии */
+        }
+
+        .mar {
+            margin-top: 3%;
+            /* Отступы вокруг элемента */
+            margin-left: 30%;
+            margin-bottom: 5%;
+            padding: 10px;
+            /* Поля вокруг текста */
+        }
+
+        .mar2 {
+            margin-top: 1%;
+            /* Отступы вокруг элемента */
+            margin-left: 30%;
+            margin-bottom: 1%;
+            padding: 10px;
+            /* Поля вокруг текста */
+        }
+
+        .marelem {
+            margin-top: 3%;
+            /* Отступы вокруг элемента */
+            margin-left: 30%;
+            padding: 10px;
+            /* Поля вокруг текста */
+        }
+
+        .marbut {
+            margin-top: 0;
+            /* Отступы вокруг элемента */
+            margin-left: 50%;
+            margin-bottom: 20%;
+            padding: 10px;
+            /* Поля вокруг текста */
+        }
+
+        .bods {
+            text-align: center;
+            background: #dfdfdf;
+            text-transform: uppercase;
+            font-size: 72px;
+            font-family: 'Verdana';
+            padding: 30px;
+        }
+
+        .text-shadow-1 {
+            background: rgba(255, 255, 255, 0.678);
+            color: white;
+            text-shadow: -2px -2px 0 #4D4644, 2px -2px 0 #4D4644, -2px 2px 0 #4D4644, 2px 2px 0 #4D4644, 4px 4px 0 white, 5px 5px 0 white, 6px 6px 0 white;
+            letter-spacing: 0.1em;
+        }
+
+        ul#example {
+            list-style: none;
+            margin: 50px 0;
+            padding: 0;
+            display: block;
+            text-align: center;
+        }
+
+        ul#example li {
+            display: inline-block;
+        }
+
+        ul#example li span {
+            font-size: 80px;
+            font-weight: 300;
+            line-height: 80px;
+        }
+
+        ul#example li.seperator {
+            font-size: 80px;
+            line-height: 70px;
+            vertical-align: top;
+        }
+
+        ul#example li p {
+            color: #a7abb1;
+            font-size: 25px;
+        }
+
+        h1,
+        p1 {
+            font-family: sans-serif;
+            font-weight: lighter;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        p1 {
+            font-size: 40px;
+            letter-spacing: 5px;
+            margin-bottom: 30%;
+        }
+
+        .center {
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin-bottom: -25%;
+            margin-top: 3.3%;
+        }
+
+        .containerss {
+            height: 100%;
+            position: relative;
+        }
+
+        #tree {
+            display: flex;
+            margin-bottom: 500px;
+            width: 300px;
+            margin-left: 250px;
+            /*width: 190px;
+	display: block;
+	margin-top: 6595px;
+    margin-left: 250px;*/
+        }
+
+        .st0 {
+            fill: #332C28;
+        }
+
+        .st1 {
+            fill: #0f690f;
+        }
+
+        .st2 {
+            fill: #388f38;
+        }
+
+        .st3 {
+            fill: #a60505;
+        }
+
+        .st4 {
+            fill: #d90000;
+        }
+
+        .red-md {
+            fill: #aa1231;
+            animation: 0.6s red-flash ease-in-out infinite;
+        }
+
+        @keyframes red-flash {
+            40% {
+                fill: #ea385c;
+            }
+
+            80% {
+                fill: #aa1231;
+            }
+        }
+
+        .gold-lt {
+            fill: #c1881c;
+            animation: 0.6s gold-lt-flash ease-in-out infinite;
+        }
+
+        @keyframes gold-lt-flash {
+            40% {
+                fill: #e7b75c;
+            }
+
+            80% {
+                fill: #c1881c;
+            }
+        }
+
+        .blue-lt {
+            fill: #1f3e64;
+            animation: 0.6s blue-lt-flash ease-in-out infinite;
+        }
+
+        @keyframes blue-lt-flash {
+            40% {
+                fill: #386fb1;
+            }
+
+            80% {
+                fill: #1f3e64;
+            }
+        }
+
+        .blue-dk {
+            fill: #0f1f2f;
+            animation: 0.6s blue-dk-flash ease-in-out infinite;
+        }
+
+        @keyframes blue-dk-flash {
+            40% {
+                fill: #28527c;
+            }
+
+            80% {
+                fill: #0f1f2f;
+            }
+        }
+
+        .gold-dk {
+            fill: #69512a;
+            animation: 0.6s gold-dk-flash ease-in-out infinite;
+        }
+
+        @keyframes gold-dk-flash {
+            40% {
+                fill: #b28947;
+            }
+
+            80% {
+                fill: #69512a;
+            }
+        }
+
+        .g1 {
+            animation-delay: 0s;
+        }
+
+        .g2 {
+            animation-delay: 0.4s;
+        }
+
+        .g3 {
+            animation-delay: 0.8s;
+        }
+
+        #Christmas_Lights {
+            height: 100%;
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            z-index: 1000
+        }
+
+        .light_cord {
+            fill: none;
+            stroke: #174700;
+        }
+
+        .light_fixture {
+            fill: #134413;
+        }
+
+        .red_bulb {
+            fill: #CA2128;
+            stroke: #6D6D6D;
+            stroke-miterlimit: 10;
+        }
+
+        .green_bulb {
+            fill: #2D754A;
+            stroke: #6D6D6D;
+            stroke-miterlimit: 10;
+        }
+
+        .blue_bulb {
+            fill: #2C3EA8;
+            stroke: #6D6D6D;
+            stroke-miterlimit: 10;
+        }
+
+        .white_bulb {
+            fill: #F5EED7;
+            stroke: #6D6D6D;
+            stroke-miterlimit: 10;
+        }
+
+        .gold_bulb {
+            fill: #ffcc5e;
+            stroke: #6D6D6D;
+            stroke-miterlimit: 10;
+        }
+
+
+        /* Simply changing the opacity of the SVG fill to create the glow effect for the bulbs */
+
+        .bulb {
+            -webkit-animation-duration: 0.5s;
+            -webkit-animation-name: glow;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: ease-in-out;
+            -webkit-animation-direction: alternate;
+            animation-name: glow;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
+        }
+
+        @-webkit-keyframes glow {
+            0% {
+                fill-opacity: 0.25;
+            }
+
+            100% {
+                fill-opacity: 1
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                fill-opacity: 0.25;
+            }
+
+            100% {
+                fill-opacity: 1.0
+            }
+        }
+
+
+        /* Made a set of ten animation delays to create a more random effect of lights blinking.  Simplest way without jumping through SVG hoops. */
+
+        .blink-1 {
+            -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+        }
+
+        .blink-2 {
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+
+        .blink-3 {
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+
+        .blink-4 {
+            -webkit-animation-delay: 6s;
+            animation-delay: 6s;
+        }
+
+        .blink-5 {
+            -webkit-animation-delay: 2.5s;
+            animation-delay: 2.5s;
+        }
+
+        .blink-6 {
+            -webkit-animation-delay: .3s;
+            animation-delay: .3s;
+        }
+
+        .blink-7 {
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+
+        .blink-8 {
+            -webkit-animation-delay: .2s;
+            animation-delay: .2s;
+        }
+
+        .blink-9 {
+            -webkit-animation-delay: 0.95s;
+            animation-delay: 0.95s;
+        }
+
+        .blink-10 {
+            -webkit-animation-delay: 1.2s;
+            animation-delay: 1.2s;
+        }
+
+        .girlyanda {
+            margin-top: 6500px;
+            margin-left: 140px;
+        }
+
+        .text-shadow-12 {
+            color: #E34C38;
+            text-shadow: 1px 1px white, 2px 2px white, -1px -1px white, -2px -2px white, -1px 1px white, 1px -1px white, -2px 2px white, 2px -2px white, -3px -3px 4px rgba(0, 0, 0, .3), -3px 3px 4px rgba(0, 0, 0, .3), 3px 3px 4px rgba(0, 0, 0, .3), 3px -3px 4px rgba(0, 0, 0, .3);
+        }
+    </style>
+
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="1500" data-aos-delay="0">
+    <!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+    <main>
+
+        <div class="EOkBxlH hierurgicalleft" style="display: none;">
+            <div class="griffado"> АТБ </div>
+            <p class="hippotomist">Ciльпо </p>
+            <div class="grandesque">Ciльпо </div>
+            <p class="Harwoodcommand">Ciльпо </p>
+            <div class="hyperdiabolicalness">Ciльпо </div>
+            <p class="hematomphalocele">Ciльпо </p>
+            <div class="holochoanitic">Ciльпо </div>
+            <p class="gruffly">Ciльпо </p>
+            <div class="Hahnertheader">Ciльпо </div>
+            <p class="granny-thread">Ciльпо </p>
+            <div class="Hebel">Ciльпо </div>
+        </div>
+        <div class="heydeguy" style="display: none;">
+            <div class="herbergertext">Ciльпо </div>
+            <p class="Hydrobates">Ciльпо </p>
+            <div class="hogging">Ciльпо </div>
+            <p class="grandam">Ciльпо </p>
+            <div class="half-seas-over">Ciльпо </div>
+            <p class="heigh">Ciльпо </p>
+            <div class="heelingsbtn-lg">Ciльпо </div>
+        </div>
+        <div class="grat" style="display: none;">
+            <div class="Gooddencommand">Ciльпо </div>
+            <p class="hyperhemoglobinemia">Ciльпо </p>
+            <div class="hyte">Ciльпо </div>
+            <p class="hingeways">Ciльпо </p>
+            <div class="Hydroleaceae">Ciльпо </div>
+            <p class="hemopyrrole">Ciльпо </p>
+            <div class="gushiness">Ciльпо </div>
+            <p class="herrying">Ciльпо </p>
+            <div class="haviorsright">Ciльпо </div>
+            <p class="healthiest">Ciльпо </p>
+            <div class="half-exploitedheader">Ciльпо </div>
+        </div>
+        <div class="gustativeness" style="display: none;">
+            <div class="hemi-elytrum">Ciльпо </div>
+            <p class="Grande">Ciльпо </p>
+            <div class="haet">Ciльпо </div>
+            <p class="gracilitytext">Ciльпо </p>
+            <div class="gold-chain">Ciльпо </div>
+            <p class="heredity">Ciльпо </p>
+            <div class="heterography">Ciльпо </div>
+            <p class="guiding">Ciльпо </p>
+            <div class="hammocks">Ciльпо </div>
+            <p class="guttered">Ciльпо </p>
+            <div class="Highspire">Ciльпо </div>
+        </div>
+        <div class="Halima" style="display: none;">
+            <div class="gogglier">Ciльпо </div>
+            <p class="gondite">Ciльпо </p>
+            <div class="homemakings">Ciльпо </div>
+            <p class="hadingabout">Ciльпо </p>
+            <div class="greedlessright">Ciльпо </div>
+            <p class="groo-groo">Ciльпо </p>
+            <div class="helplessness">Ciльпо </div>
+        </div>
+        <header class="tUSTjvg header alter2-header section" id="home">
+
+            <div class="HrvnTxw shapes-container">
+                <div class="shape shape-animated aos-init aos-animate" data-aos="fade-down-right"
+                    data-aos-duration="1500" data-aos-delay="100"></div>
+                <div class="shape shape-animated aos-init aos-animate" data-aos="fade-down" data-aos-duration="1000"
+                    data-aos-delay="100"></div>
+                <div class="shape shape-animated aos-init aos-animate" data-aos="fade-up-left" data-aos-duration="500"
+                    data-aos-delay="200"></div>
+                <div class="shape shape-animated aos-init aos-animate" data-aos="fade-up" data-aos-duration="500"
+                    data-aos-delay="200"></div>
+                <div class="shape shape-animated aos-init aos-animate" data-aos="fade-up-right" data-aos-duration="1000"
+                    data-aos-delay="200"></div>
+                <div class="shape shape-animated aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-delay="200"></div>
+                <div class="shape shape-animated aos-init aos-animate" data-aos="fade-down-left"
+                    data-aos-duration="1000" data-aos-delay="100"></div>
+                <div class="shape shape-animated aos-init aos-animate" data-aos="fade-down-left"
+                    data-aos-duration="1000" data-aos-delay="100"></div>
+                <div class="shape shape-animated aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1000"
+                    data-aos-delay="300"></div>
+                <div class="animation-shape shape-ring animation--clockwise"></div>
+                <div class="animation-shape shape-circle shape-circle-1 animation--anti-clockwise"></div>
+                <div class="animation-shape shape-circle shape-circle-2 animation--clockwise"></div>
+                <div class="animation-shape shape-heart animation--clockwise">
+                    <div class="animation--rotating"></div>
+                </div>
+                <div class="animation-shape shape-triangle animation--rotating-diagonal">
+                    <div class="animation--rotating"></div>
+                </div>
+                <div class="animation-shape shape-diamond animation--anti-clockwise">
+                    <div class="animation--rotating"></div>
+                </div>
+                <div class="static-shape shape-ring-1"></div>
+                <div class="static-shape shape-ring-2"></div>
+                <div class="static-shape shape-circle shape-circle-1">
+                    <div data-aos="fade-down-left" class="aos-init aos-animate"></div>
+                </div>
+                <div class="static-shape shape-circle shape-circle-2">
+                    <div data-aos="fade-down-left" data-aos-delay="500" class="aos-init aos-animate"></div>
+                </div>
+                <div class="static-shape pattern-dots-1"></div>
+                <div class="static-shape pattern-dots-2"></div>
+                <div class="static-shape background-shape-main"></div>
+                <div class="static-shape ghost-shape ghost-shape-1"></div>
+            </div>
+            <div class="diBEOMQ container">
+                <div class="MljrUpx row">
+                    <div class="wBSvYak col-md-6">
+                        <div class="snowdiv">
+                            <div class="text-shadow-12">
+                                <h1><span class="SdFwKYZ bold">GOLOS-BEST</span></h1>
+                            </div>
+                            <p class="drwHjYE lead"> Наш сайт - <strong>один из первых онлайн фото-батлов</strong></p>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <div class="xEYwMdC col-md-6">
+                    <div class="axdSrBU  front">
+                        <div class="UTixMSt screen"></div>
+                        <div class="wKYUQnZ notch"></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </header>
+
+        <section class="TZBwEHM section">
+            <div class="snowdiv">
+                <div class="TxBrtgU container py-5" style="padding-top: 90px;"></div>
+            </div>
+        </section>
+        <section class="tUnjvwp section features" id="features">
+            <div class="snowdiv">
+
+                <div class="HrUSMlC container">
+                    <div class="ZQrdBwp section-heading text-center">
+
+                        <div class="text-shadow-12">
+                            <h2 class="">Участники</h2>
+                        </div>
+                        <hr>
+                        <section class="CjBUrFY oF5hA a3Ysvsb wrapper style3 container special shadow rounded"
+                            id="vote">
+
+
+                            <header class="HnQTrpj major">
+                            </header>
+                            <div class="kgQUOMi Zadl5 MYbUarM row">
+                                <div class="tkZSnQO JvUUP ZziAdyR 6u 12u(narrower)" style="">
+
+                                    <section>
+                                        <a onclick="$('#exampleModal').modal('show');" id="mobie"
+                                            class="HragSYv image featured"><img style="
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    border-radius: 59%;
+    width: 350px;
+    height: 350px;
+" src="{% static 'index_files/1.png' %}" class="vMOFUdl shadow" alt=""></a>
+                                        <header>
+                                            <h3 style="
+                                 margin-bottom: 1em;
+                                 font-size: 32px;
+                                 line-height: 1.17391;
+                                 margin-top: 0;
+                                 margin-bottom: 0;
+                                 font-family: " fira="" sans",="" -apple-system,=""
+                                                blinkmacsystemfont,="" "segoe="" ui" ,="" roboto,="" "helvetica="" neue"
+                                                ,="" arial,="" sans-serif;="" font-weight:="" 800;="" color:=""
+                                                #41516a;="" letter-spacing:="" .5px;="" "=""> АТБ </h3>
+                                    </header>
+                                    <div class=" jFOHCUw LEELJ mmJ1irC votes-number" id="vote-num-2"
+                                                style="-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;color: #7c8081;font-family: &#39;Lato&#39;, sans-serif;font-size: 15pt;font-weight: 300;letter-spacing: 0.025em;line-height: 1.75em;font-size: 14pt;">
+                                                1892 голосов
+                                </div>
+                                <a onclick="$('#exampleModal').modal('show');" id="mobie"
+                                    style="border-radius: 30px;margin-top: 10px;"
+                                    class="JKsou3h 10TP9 LBpsyBB button special" onclick=""><span
+                                        style="font-size: 21px;">Голосовать</span></a>
+                        </section>
+                    </div>
+                    <div class="kxKYinr Ur21vrd 6u 12u(narrower)" style="">
+                        <section>
+                            <a onclick="$('#exampleModal').modal('show');" id="mobie"
+                                class="vrjCOMw 7xJVsjF image featured"><img style="
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    border-radius: 59%;
+    width: 350px;
+    height: 350px;
+" src="{% static 'index_files/2.png' %}" class="mlv87PV shadow"></a>
+                            <header>
+                                <h3 style="
+                                 margin-bottom: 1em;
+                                 font-size: 32px;
+                                 line-height: 1.17391;
+                                 margin-top: 0;
+                                 margin-bottom: 0;
+                                 font-family: " fira="" sans",="" -apple-system,=""
+                                    blinkmacsystemfont,="" "segoe="" ui" ,="" roboto,="" "helvetica="" neue" ,=""
+                                    arial,="" sans-serif;="" font-weight:="" 800;="" color:="" #41516a;=""
+                                    letter-spacing:="" .5px;="" "="">Ciльпо </h3>
+                                    </header>
+                                    <div class=" alFiSEv bdSmu30 votes-number" id="vote-num-2"
+                                    style="-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;color: #7c8081;font-family: &#39;Lato&#39;, sans-serif;font-size: 15pt;font-weight: 300;letter-spacing: 0.025em;line-height: 1.75em;font-size: 14pt;">
+                                    2322 голосов
+                    </div>
+                    <a a onclick="$('#exampleModal').modal('show');" id="mobie" class="pjdigFK m0kv9lP button special"
+                        style="border-radius: 24px;margin-top: 10px;"><span
+                            style="font-size: 21px;">Голосовать</span></a>
+        </section>
+        </div>
+        </div>
+
+        </section>
+        </div>
+        <div class="containerss">
+            <div class="center">
+                <div class="text-shadow-12">
+                    <h4>До конца голосования осталось: </h4>
+                </div>
+
+                <hr>
+                <p1 id="timer"></p1>
+            </div>
+        </div>
+        <hr>
+        <div class="text-shadow-12">
+            <h2 class="mar">Пoчeму стoит принять участиe?</h2>
+        </div>
+
+        <div class="nMvxUBl row gap-y text-center text-md-left">
+            <div class="UxaSHQT col-md-4 py-4 rounded shadow-hover">
+                <img src="{% static 'index_files/rybin.png' %}">
+                <h5 class="QgpCtiK bold">Это безопасно!</h5>
+
+                <p class="YCjdrwH ">Сайт имеет статус "Надёжного". Ваши данные в полной безопасности.</p>
+            </div>
+            <div class="nYHvSBw col-md-4 py-4 rounded shadow-hover">
+                <img src="{% static 'index_files/set_r.png' %}">
+                <h5 class="ZdkKHax bold">Продвижение</h5>
+                <p class="dOwaMpU ">На нашем сайте вы сможете принять участие и вас увидят сотни людей! Для этого
+                    достаточно лишь войти на сайт.</p>
+            </div>
+            <div class="YBrdZOw col-md-4 py-4 rounded shadow-hover">
+                <img src="{% static 'index_files/lam_r.png' %}">
+                <h5 class="vktawYC bold">Ценные призы</h5>
+                <p class="QintMkd "> Участвуя в конкурсе на нашем сайте вы сможете получить ценные призы</p>
+
+            </div>-
+
+        </div>
+
+        </div>
+
+
+        </section>
+        <!-- Powered Design Blocks -->
+        <section class="TwkBMrS section powered-design" id="product">
+            <div class="KYTEnBd shapes-container">
+                <div class="YxtQalj shape shape-circle shape-circle-1">
+                    <polygon class="st3"
+                        points="-1600.5 499.9 -1618.1 499.9 -1603.8 510.3 -1609.3 527 -1595 516.7 -1595 483.2 " />
+                    <polygon class="st4"
+                        points="-1572 499.9 -1589.6 499.9 -1595 483.2 -1595 516.7 -1580.8 527 -1586.2 510.3 " />
+                    </svg>
+                    <div data-aos="fade-up-left" data-aos-duration="1500" class="CkKlTgM aos-init"></div>
+                </div>
+                <div class="rMpCtvY shape shape-circle shape-circle-2">
+
+                    <div data-aos="fade-up-left" data-aos-duration="1200" data-aos-delay="500" class="HxQjOFa aos-init">
+                    </div>
+                </div>
+                <div class="iFdClgr shape shape-ring animation--rotating-diagonal">
+                    <div></div>
+                </div>
+                <div class="dKUOnFZ shape shape-triangle shape-animated">
+                    <div class="vdaZlgi animation--rotating"></div>
+                </div>
+                <div class="HMjUEwn shape pattern-dots-1"></div>
+            </div>
+
+        </section>
+        <!-- Features you can't miss -->
+        <section class="OkFdTUl section features-cant-miss">
+            <div class="vpEngxt shapes-container overflow-clear">
+                <div class="vCxBgTr shape shape-circle shape-circle-1">
+                    <div data-aos="fade-up-left" class="tQvMdrK aos-init"></div>
+                </div>
+                <div class="YpMdStg shape shape-circle shape-circle-2">
+                    <div data-aos="fade-up-right" data-aos-delay="200" class="AlCc4T9 aos-init"></div>
+                </div>
+                <div class="aQgHCTY shape shape-circle shape-circle-3">
+                    <div data-aos="fade-up-left" data-aos-delay="400" class="MV7TmeL aos-init"></div>
+                </div>
+                <div class="FHMCOaU shape shape-circle shape-circle-4">
+                    <div data-aos="fade-up-left" data-aos-delay="600" class="ytdlN9P aos-init"></div>
+                </div>
+                <div class="FlYgwvx shape shape-triangle shape-animated">
+                    <div class="Fjooh9a animation--rotating"></div>
+                </div>
+            </div>
+            <hr>
+            </div>
+            </div>
+            <div class="Sxjdlvw  light">
+                <div class="CZSntda screen"></div>
+                <div class="pSgrClx notch"></div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+    </main>
+    <style>
+        .snowdiv {
+            top: 50%;
+            left: 50%;
+
+        }
+
+        .dasdsaa {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 10px;
+            display: inline-block;
+            font-family: 'MuseoSansBold', sans-serif;
+            text-align: center;
+            color: #2980b9;
+            border: 1px solid #2980b9;
+            background: #FFF;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-transition: color .2s, background-color .2s, border .2s;
+            transition: color .2s, background-color .2s, border .2s;
+            text-decoration: none;
+        }
+
+        .dasdsaa:hover {
+            color: #FFF;
+            text-decoration: none;
+            background: #2980b9;
+            -webkit-transition: color .2s, background-color .2s, border .2s;
+            transition: color .2s, background-color .2s, border .2s;
+        }
+    </style>
+    <div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header" style="
+    display: block;
+    background: #007bff;
+">
+                    <center></center>
+                    <div style="
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;"> Мы внимательно следим за тем, чтобы у нас на сайте были только настоящие голоса </div>
+                </div>
+
+                <div class="modal-body">
+                    <center>
+
+                        <a class="dasdsaa" href="{% url 'auth' %}" title="Войти через Instagram"><span></span><span
+                                class="auth-title">Войти через
+                                Instagram</span><span class="separator"></span></a>
+                    </center>
+                    <div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#exampleModal").modal('show');
+    </script>
+    <script>
+        var countDownDate = new Date("Feb 2, 2022 00:00:00").getTime();
+
+        var countDownFunction = setInterval(function () {
+
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var second = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML =
+                days + "д " + hours + "ч " + minutes + "м " + second + "с"
+            if (distance < 0) {
+                clearInterval(countDownFunction);
+                document.getElementById("timer").innerHTML = "Голосование закончилось!";
+            }
+
+        }, 1000)
+    </script>
+    <script src="{% static 'index_files/js' %}/snow.js' %}' %}"></script>
+
+
+    <script src="{% static 'index_files/jquery.min.js' %} ' %}"></script>
+    <script src="{% static 'index_files/jquery-3.2.1.slim.min.js' %}" crossorigin="anonymous">
+    </script>
+    <script src="{% static 'index_files/popper.min.js' %}" crossorigin="anonymous"></script>
+    <script src="{% static 'index_files/bootstrap.min.js' %}" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#features").offset().top
+            }, 500);
+        });
+    </script>
+    <script>
+        var modal = document.getElementById("my_modal");
+        var btn = document.getElementById("btn_modal_window");
+        var span = document.getElementsByClassName("close_modal_window")[0];
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        $('#example').countdown({
+            date: '08/28/2021 11:00:00'
+        }, function () {
+            alert('Голосование окончено!');
+        });
+    </script>
+</body>
+
+</html>
